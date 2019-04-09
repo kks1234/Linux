@@ -26,7 +26,7 @@ void init_net(void)
     if(sock == -1) {
         perror("socket");
     }
-    strcpy(g_eth_name,"eth0");
+    strcpy(g_eth_name,"enp0s3");   //使用ifconfig查看自身电脑的设备名称
     strcpy(ifr.ifr_ifrn.ifrn_name,g_eth_name);
     printf("eth name:\t%s\n",g_eth_name);
 
