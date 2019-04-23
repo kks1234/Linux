@@ -1,6 +1,3 @@
-/*************/
-/* Linux     */
-/* learening */
-/* note      */
-/*************/
+# Linux learening note      
+
  
