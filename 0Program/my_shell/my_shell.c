@@ -138,7 +138,7 @@ void do_cmd(int argcount, char arglist[100][256])
     if(how == in_redirect) {  /* 命令只含有一个输入重定向 */
         for(i=0; arg[i] != NULL; i++) {
             if(strcmp(arg[i],"<") == 0) {
-                file = arg[i-1];
+                file = arg[i+1];
                 arg[i] = NULL;
             }
         }
