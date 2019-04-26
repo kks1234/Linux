@@ -1,7 +1,7 @@
-## pint pthread_once (pthread_once_t *__once_control,void (*__init_routine) (void)) __nonnull ((1, 2))
+## pint pthread_once()函数
 
 
-
+pint pthread_once (pthread_once_t *__once_control,void (*__init_routine) (void)) __nonnull ((1, 2));
 ### 适用范围
 这种情况一般用于某个多线程调用的模块使用前的初始化，但是无法判定哪个线程先运行，从而不知道把初始化代码放在哪个线程合适的问题。 
 当然，我们一般的做法是把初始化函数放在main里，创建线程之前来完成，但是如果我们的程序最终不是做成可执行程序，而是编译成库的形式，那么main函数这种方式就没法做到了。
