@@ -8,7 +8,7 @@
 2. 用条件变量机制；
 
 ### 条件变量函数: 
-####（1）初始化
+#### 初始化
 ```
 函数初始化
 int pthread_cond_init(pthread_cond_t *restrict cont,const pthread_condattr_t *restrict attr);
@@ -20,7 +20,7 @@ attr: 条件变量属性，一般设为NULL；
 ```
 pthread_cond_t cond = PTHREAD_CONT_INITALIZER;
 ```
-####（2）等待条件满足
+#### 等待条件满足
 ```
 //非阻塞，
 int pthread_cond_timedwite(pthread_conda_t *restrict cond,pthread_mutex_t *restrict mutex,const struct timespec *restrict abstime);
@@ -34,14 +34,14 @@ abstime: 指定等待时间，如果在规定时间没有通知，返回 ETIMEDO
 pthread_cond_wait()做的三件事： 
 1，释放锁—->2，等待锁—->3，收到条件信息，尝试获取锁
 
-####（3)唤醒等待
+#### 唤醒等待
 ```
 //唤醒改条件变量上的所有线程
 int pthread_cond_broadcast(pthread_cond_t *cond);
 //至少唤醒一个等待的线程
 int pthread_cond_signal(pthread_cond_t *cond);
 ```
-####（4）销毁条件变量
+#### 销毁条件变量
 ```
 int pthread_cond_destroy(pthread_cond_t *cond);
 ```
