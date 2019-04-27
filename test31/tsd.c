@@ -4,10 +4,11 @@
 #include <pthread.h>
 
 pthread_key_t key;
+long tsd = 1;
 
 void* thread2(void* arg)
 {
-    long tsd = 5;
+    tsd = 5;
     printf("thread2 %ld is runing\n",pthread_self());
     pthread_setspecific(key,(void *)tsd);
     printf("thread2 %ld returns %ld\n",pthread_self(),(long)pthread_getspecific(key));
@@ -15,7 +16,6 @@ void* thread2(void* arg)
 
 void* thread1(void* arg)
 {
-    long tsd = 0;
     pthread_t thid2;
 
     printf("thread1 %ld is runing\n",pthread_self());
